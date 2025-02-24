@@ -8,17 +8,18 @@
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+    animation: slideIn 0.3s forwards;
 }
 
 .toaster {
-    background-color: #333;
+    background-color: #00aeff;
     color: white;
     padding: 15px 25px;
     border-radius: 5px;
     margin-bottom: 10px;
     opacity: 0;
     transform: translateX(100%);
-    animation: slideIn 0.3s forwards;
+    
 }
 
 @keyframes slideIn {
