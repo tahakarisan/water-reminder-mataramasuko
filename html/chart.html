@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mataramasuko - İstatistikler</title>
+    <link rel="stylesheet" href="../css/stats.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../javascript/node_modules/chart.js/dist/chart.umd.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>💧Mataramasuko</h1>
+            <button id="menuBtn" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menü</h2>
+            <button id="closeBtn" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                <li><a href="stats.html"><i class="fas fa-chart-bar"></i> İstatistikler</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> Hakkında</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main style="padding-top: 60px;" class="stats-page">
+        <div class="stats-cards">
+            <div class="stat-card">
+                <i class="fas fa-tint"></i>
+                <h3>Günlük Ortalama</h3>
+                <p id="dailyAverage">1950 ml</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-calendar"></i>
+                <h3>Aylık Toplam</h3>
+                <p id="monthlyTotal">58.5 L</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Hedef Başarısı</h3>
+                <p id="targetSuccess">85%</p>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3>Haftalık Su Tüketimi</h3>
+                <canvas id="weeklyChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Günlük Hedef Karşılaştırması</h3>
+                <canvas id="dailyTargetChart"></canvas>
+            </div>
+            <div class="chart-container wide">
+                <h3>Aylık Trend</h3>
+                <canvas id="monthlyTrendChart"></canvas>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../javascript/index.js"></script>
+    <script src="../javascript/stats.js"></script>
+</body>
+</html>

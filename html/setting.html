@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mataramasuko - Ayarlar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/setting.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>💧 Mataramasuko</h1>
+            <button id="menuBtn" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar ve Overlay yapısı -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menü</h2>
+            <button id="closeBtn" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                <li><a href="chart.html"><i class="fas fa-chart-bar"></i> İstatistikler</a></li>
+                <li><a href="setting.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                <li><a href="about-us.html"><i class="fas fa-info-circle"></i> Hakkında</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main style="margin-top: 120px;" class="container py-4">
+        <h1 style="color: rgb(0, 97, 182); text-align: left; margin-bottom: 30px;">Ayarlar</h1>
+        <!-- Hedef Ayarları -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-bullseye me-2"></i>Hedef Ayarları</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="dailyTarget" class="form-label">Günlük Su Hedefi (ml)</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="dailyTarget" value="2000" step="100">
+                        <span class="input-group-text">ml</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bildirim Ayarları -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-bell me-2"></i>Bildirim Ayarları</h5>
+            </div>
+            <div class="card-body">
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="enableNotifications" checked>
+                    <label class="form-check-label" for="enableNotifications">Bildirimleri Etkinleştir</label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Bildirim Sıklığı</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="notificationInterval" value="60">
+                        <span class="input-group-text">dakika</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Bildirim Zaman Aralığı</label>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="startTime" class="form-label">Başlangıç</label>
+                            <input type="time" class="form-control" id="startTime" value="08:00">
+                        </div>
+                        <div class="col-6">
+                            <label for="endTime" class="form-label">Bitiş</label>
+                            <input type="time" class="form-control" id="endTime" value="22:00">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Görünüm Ayarları -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-palette me-2"></i>Görünüm Ayarları</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label style="text-align: left;" class="form-label">Tema</label>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary active">Açık</button>
+                        <button class="btn btn-outline-primary">Koyu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Kaydet Butonu -->
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button id="resetSetting" class="btn btn-secondary me-md-2" type="button">Varsayılana Döndür</button>
+            <button id="saveSetting" class="btn btn-primary" type="button">Değişiklikleri Kaydet</button>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/index.js"></script>
+</body>
+</html>

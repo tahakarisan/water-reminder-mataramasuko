@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Hatırlatıcı</title>
+    
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>💧Mataramasuko</h1>
+            <button id="menuBtn" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menü</h2>
+            <button id="closeBtn" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                <li><a href="chart.html"><i class="fas fa-chart-bar"></i> İstatistikler</a></li>
+                <li><a href="setting.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                <li><a href="about-us.html"><i class="fas fa-info-circle"></i> Hakkında</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <main>
+        <h1 style="padding-top: 50px;" id="current-percent">%0</h1>
+        <div class="water-container">    
+            <div class="water-level"></div>
+        </div>
+        <button id="add-water" class="ripple">Su İç (200ml)</button>
+        <button id="reset" class="ripple">Sıfırla</button>
+    </main>
+    <script src="../javascript/index.js"></script>
+</body>
+</html>
