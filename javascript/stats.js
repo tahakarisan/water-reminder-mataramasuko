@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Örnek veri
     const weeklyData = {
         labels: ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'],
         datasets: [{
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }]
     };
 
-    // Haftalık grafik
     new Chart(document.getElementById('weeklyChart'), {
         type: 'line',
         data: weeklyData,
@@ -35,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Günlük hedef karşılaştırması
     const dailyTargetData = {
         labels: ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'],
         datasets: [{
@@ -68,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Aylık trend
     const monthlyData = {
         labels: Array.from({length: 30}, (_, i) => i + 1),
         datasets: [{
@@ -99,12 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // İstatistik kartlarını güncelle
     updateStatCards();
 });
 
 function updateStatCards() {
-    // Bu fonksiyon gerçek verilerle güncellenebilir
     document.getElementById('dailyAverage').textContent = '1950 ml';
     document.getElementById('monthlyTotal').textContent = '58.5 L';
     document.getElementById('targetSuccess').textContent = '85%';

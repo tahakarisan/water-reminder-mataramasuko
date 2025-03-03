@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('closeBtn');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
-
+    const waterSound = new Audio('../assets/water-191999.mp3');
+    const successSound = new Audio('../assets/success-fanfare-trumpets-6185.mp3');
+    waterSound.volume = 1;
+    successSound.volume = 1;
+    successSound.playbackRate = 1.5;
     let current = 0;
     const target = 2000;
     const increment = 200;
@@ -32,7 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
         addButton.addEventListener('click', (e) => {
             createRipple(e);
             if (current < target) {
+                waterSound.currentTime = 0; 
+                waterSound.play();
                 current += increment;
+                if(current==target){
+                    successSound.play()
+                .then(() => {
+                    setTimeout(() => {
+                        window.location.href = '../html/congralutions.html';
+                    }, 2500);
+                })
+                .catch(error => {
+                    console.error('Ses çalma hatası:', error);
+                    // Ses çalınamazsa direkt yönlendirme yap
+                    window.location.href = 'congratulations.html';
+                });
+                }
                 updateWaterLevel();
             }
         });
@@ -91,5 +110,4 @@ document.addEventListener('DOMContentLoaded', () => {
     targetSpan.textContent = target;
     updateWaterLevel();
 });
-    // Başlangıç değerlerini ayarla
     
